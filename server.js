@@ -12,3 +12,14 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
+
+//Testing a dummy path to confirm that the server is listening to the PORT
+app.get('/welcome', function(req, res){
+    res.send('Welcome to the note-taking app!');
+});
+  
+// LISTENER
+//  "starts" our server and listens to PORT
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
+});
