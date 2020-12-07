@@ -14,7 +14,10 @@
         const newNote = req.body;
         newNote.id= uuidv4();
         notes.push(newNote);
-        res.json(notes);
+        fs.writeFile(path.join(__dirname, '../db/db.json'), JSON.stringify(notes), (err)=>{
+            if(err) throw error;
+        });
+        res.json(newNote);
     })
 
     app.delete('/api/notes/:id', function(req, res){
