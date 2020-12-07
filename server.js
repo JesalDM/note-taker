@@ -1,12 +1,12 @@
 // DEPENDENCIES
 // Imports Express npm package
-var express = require("express");
+const express = require("express");
 
 // Creates an "express" server
-var app = express();
+const app = express();
 
 // Sets an initial port
-var PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -15,9 +15,9 @@ app.use(express.static('public'));
 
 // ROUTER
 // Points server to a series of "route" files.
+require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-  
 // LISTENER
 //  "starts" our server and listens to PORT
 app.listen(PORT, function() {

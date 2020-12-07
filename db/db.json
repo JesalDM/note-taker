@@ -1,1 +1,12 @@
-[{"title":"Test Title","text":"Test text"}]
+[
+    {
+    "title":"Test Title",
+     "text":"Test text",
+     "id" : "1"
+    },
+    {
+    "title":"Class - Week 13",
+    "text":"Express node js",
+    "id" : "2"
+    }
+]

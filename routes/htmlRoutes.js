@@ -1,5 +1,5 @@
 // importing path package
-var path = require('path');
+const path = require('path');
 
 // defining, handling and exporting html routes for GET requests
 module.exports = function(app){
@@ -12,4 +12,4 @@ module.exports = function(app){
     app.get('*', function(req, res){
         res.sendFile(path.join(__dirname, "../public/index.html"));
     });
-}
+ }
